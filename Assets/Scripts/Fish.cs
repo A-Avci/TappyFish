@@ -7,6 +7,7 @@ public class Fish : MonoBehaviour
     Rigidbody2D _rb; // eger alt cizgi eklenirse private degisken oldugunu belli etmis oluruz.
     public float speed;
     int angle, maxAngle = 20, minAngle = -60;
+    public Score score;
 
     void Start()
     {
@@ -37,5 +38,14 @@ public class Fish : MonoBehaviour
         }
 
         transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Obstacle"))
+        {
+            score.Scored();
+        }
     }
 }
