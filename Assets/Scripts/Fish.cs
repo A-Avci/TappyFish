@@ -76,7 +76,7 @@ public class Fish : MonoBehaviour
         }
         else if (collision.CompareTag("Column"))
         {
-            GameOver();
+            
         }
     }
 
