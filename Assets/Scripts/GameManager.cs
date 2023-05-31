@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static Vector2 bottomleft;
+    public static bool gameover;
 
     private void Awake()
     {
@@ -13,9 +14,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        gameover = false;
     }
 
+    public void GameOver()
+    {
+        gameover = true;
+    }
+    
     
     void Update()
     {
